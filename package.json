@@ -1,0 +1,19 @@
+{
+  "name": "imc_lab_2",
+  "version": "1.0.0",
+  "description": "Segundo exercício de validação de frequência do lab de C214",
+  "main": "CalculadoraIMC.test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.1",
+    "typescript": "^5.4.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
