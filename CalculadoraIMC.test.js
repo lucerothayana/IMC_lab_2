@@ -14,3 +14,4 @@ describe('CalculadoraIMC', () => {
         expect(imcCalculado).toBeCloseTo(22.86, 2); // IMC esperado para altura 1.75m e peso 70kg
     });
 });
+
