@@ -4,16 +4,15 @@
   "description": "Segundo exercício de validação de frequência do lab de C214",
   "main": "CalculadoraIMC.test.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/express": "^4.17.1",
     "typescript": "^5.4.4"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "vitest": "^1.4.0"
   }
 }
