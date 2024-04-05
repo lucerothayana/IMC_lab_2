@@ -10,8 +10,8 @@ class CalculadoraIMC {
         this.altura = altura;
     }
 
-    public calcularIMC(altura: number, peso:number): number {
-        const imc = peso / (altura*altura);
+    public calcularIMC(): number {
+        const imc = this.peso / (this.altura**2);
         return imc;
     }
 }
