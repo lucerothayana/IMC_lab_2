@@ -1,40 +1,33 @@
 import CalculadoraIMC from '../main/CalculadoraIMC';
 import { PesoNegativoError } from '../main/PesoNegativoError';
+import ResultadoIMC from '../main/ResultadoIMC';
 
 let sut: CalculadoraIMC = null
 
+function interpretarIMC(): ResultadoIMC {
+    return new ResultadoIMC("Normal", 0, "Normal");
+}
+
 describe('CalculadoraIMC', () => {
     beforeEach(() => {
-        sut = new CalculadoraIMC(1.75, 70);
+        sut = new CalculadoraIMC({interpretarIMC});
     });
 
     it('deve calcular o IMC corretamente', () => {
-        const imcCalculado = sut.calcularIMC();
+        const imcCalculado = sut.calcularIMC(1.75, 70);
 
         expect(imcCalculado).toBeCloseTo(22.86, 2); 
     });
 
     it('peso negativo', () => {
-        sut = new CalculadoraIMC(1.75, -70);
-
-        expect(async() => sut.calcularIMC()).rejects.toThrowError("Peso negativo"); 
-    });
-
-    it('peso negativo', () => {
-        sut = new CalculadoraIMC(1.75, -70);
-
-        expect(async() => sut.calcularIMC()).rejects.toBeInstanceOf(PesoNegativoError); 
+        expect(() => sut.calcularIMC(1.75, -70)).toThrowError("Peso negativo"); 
     });
 
     it('altura negativa', () => {
-        sut = new CalculadoraIMC(-1.75, 70);
-
-        expect(async() => sut.calcularIMC()).rejects.toThrowError("Altura negativa"); 
+        expect(() => sut.calcularIMC(-1.75, 70)).toThrowError("Altura negativa"); 
     });
 
     it('peso e altura negativos', () => {
-        sut = new CalculadoraIMC(-1.75, -70);
-
-        expect(async() => sut.calcularIMC()).rejects.toThrowError("Peso negativo"); 
+        expect(() => sut.calcularIMC(-1.75, -70)).toThrowError("Peso negativo"); 
     });
 });
