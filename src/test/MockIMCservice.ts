@@ -45,3 +45,4 @@ class MockIMCService {
         return new ResultadoIMC(estado, criticidade, comentario);
     }
 }
+

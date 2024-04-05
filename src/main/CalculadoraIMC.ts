@@ -1,22 +1,22 @@
 import {PesoNegativoError} from './PesoNegativoError';
 
+import IMCService from "./IMCService";
+
 class CalculadoraIMC {
-  // Membros da classe
-  private altura: number;
-  private peso: number;
+    // Membros da classe
+    private imcService: IMCService;
 
-  constructor(altura: number, peso: number) {
-    // Inicialize os membros da classe
-    this.peso = peso;
-    this.altura = altura;
-  }
 
-  public calcularIMC(): number {
-    if (this.peso < 0) throw new PesoNegativoError("Peso negativo");
+    constructor(imcService: IMCService) {
+        this.imcService = imcService;
+    }
 
-    if (this.altura < 0) throw new Error("Altura negativa");
+  public calcularIMC(altura: number, peso:number): number {
+    if (peso < 0) throw new PesoNegativoError("Peso negativo");
 
-    const imc = this.peso / this.altura ** 2;
+    if (altura < 0) throw new Error("Altura negativa");
+
+    const imc = peso / altura ** 2;
 
     return imc;
   }
