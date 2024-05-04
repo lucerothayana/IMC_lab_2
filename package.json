@@ -4,7 +4,8 @@
   "description": "Segundo exercício de validação de frequência do lab de C214",
   "main": "CalculadoraIMC.test.js",
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "build":tsc
   },
   "keywords": [],
   "author": "",
