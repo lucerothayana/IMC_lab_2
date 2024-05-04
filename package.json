@@ -5,7 +5,7 @@
   "main": "CalculadoraIMC.test.js",
   "scripts": {
     "test": "vitest",
-    "build":tsc
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
