@@ -2,7 +2,7 @@ import CalculadoraIMC from '../main/CalculadoraIMC';
 import { PesoNegativoError } from '../main/PesoNegativoError';
 import ResultadoIMC from '../main/ResultadoIMC';
 
-let sut: CalculadoraIMC = new CalculadoraIMC();
+let sut: CalculadoraIMC = new CalculadoraIMC({interpretarIMC});
 
 function interpretarIMC(): ResultadoIMC {
     return new ResultadoIMC("Normal", 0, "Normal");
